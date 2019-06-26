@@ -123,17 +123,14 @@ for (i in 1:nrow(KG.pre)) {
 
 KG.pre$correctQ5 <- as.numeric(correctQ5)
 
-### Create a new column with total correct
+### Create a new column with total correct (number correct, percent correct in decimal, percent correct whole number)
 KG.pre$pre.ncorrect<-KG.pre[,15]+KG.pre[,16]+KG.pre[,17]+KG.pre[,18]+KG.pre[,19]
 KG.pre$pre.percorrect<-KG.pre[,20]/5
+KG.pre$pre.percorrect.formated<-KG.pre[,20]/5*100
 
 View(KG.pre)
 
-
-
-
-
-# Prepare post test data before joining -----------------------------------
+# Score and prepare post test data before joining -----------------------------------
 
 #
 KG.post <-as.data.frame(KG.post)
@@ -254,9 +251,11 @@ KG.post$correctQ5 <- as.numeric(correctQ5)
 
 head(KG.post)
 
-### Create a new column with total correct
+### Create a new column with total correct (number correct, percent correct in decimal, percent correct whole number)
 KG.post$post.ncorrect<-KG.post[,22]+KG.post[,23]+KG.post[,24]+KG.post[,25]+KG.post[,26]
 KG.post$post.percorrect<-KG.post[,27]/5
+KG.post$post.percorrect.formated<-KG.post[,27]/5*100
+
 
 View(KG.post)
 
@@ -326,18 +325,21 @@ t.test(post.percorrect, pre.percorrect, mu=0, paired=T)
 ## Graph results
 
 attach(KG.innerjoin.prepost)
-m=c(mean(pre.percorrect), mean(post.percorrect))
+m=c(mean(pre.percorrect.formated), mean(post.percorrect.formated))
 names(m)=c("Pre-Knowledge Measure", "Post-Knowledge Measure")
-se=c(sd(pre.percorrect)/sqrt(length(pre.percorrect)),
-     sd(post.percorrect)/sqrt(length(post.percorrect)))
+se=c(sd(pre.percorrect.formated)/sqrt(length(pre.percorrect.formated)),
+     sd(post.percorrect.formated)/sqrt(length(post.percorrect.formated)))
 
 library(ggplot2)
 library(scales)
 
 windows()
-bp=barplot(m, ylim=c(0,1), 
+bp=barplot(m, ylim=c(0,100), 
            xpd=F, 
            main="Reframing Behavior Management\nPart 1",
+           ylab="Percent Correct",
            col="light blue")
 arrows(x0=bp, y0=m-se, y1=m+se, code=3, angle=90) 
+
+
 
