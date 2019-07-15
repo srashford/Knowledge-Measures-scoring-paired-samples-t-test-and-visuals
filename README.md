@@ -2,7 +2,7 @@
 
 These scripts expand on the previously created Knowledge-Gains-Scoring scripts. In addition to scoring, they join the pre- and post-knowledge measure data, determine whether the changes are significant using paired samples t-tests, and produce data visualizations. 
 
-The data used with these scripts is periodically downloaded from UMU several times a year.
+The data used with these scripts is periodically downloaded from UMU, several times a year.
 
 Structure: Each script is made for a particular training. Pre and post training answers are scored and compared.
 
