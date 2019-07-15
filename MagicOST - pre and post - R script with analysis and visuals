@@ -263,9 +263,9 @@ View(KG.fulljoin.prepost)
 
 # Export tables-------------------------------------------------------------
 
-write.table(KG.innerjoin.prepost, file="RBMpart1_4.10.19_JJ_PrePost_InnerJoin.csv", sep=",", row.names = FALSE)
+write.table(KG.innerjoin.prepost, file="E-3580 MagicOST 5_15_2018_KB_PrePost_InnerJoin.csv", sep=",", row.names = FALSE)
 
-write.table(KG.fulljoin.prepost, file="RBMpart1_4.10.19_JJ_PrePost_FullJoin.csv", sep=",", row.names = FALSE)
+write.table(KG.fulljoin.prepost, file="E-3580 MagicOST 5_15_2018_KB_PrePost_FullJoin.csv", sep=",", row.names = FALSE)
 
 # Determine if the differences are significant INNER JOIN DATA-----
 
@@ -293,10 +293,8 @@ library(scales)
 windows()
 bp=barplot(m, ylim=c(0,100), 
            xpd=F, 
-           main="Reframing Behavior Management\nPart 1",
+           main=" Magic of Learning Reading and Science in OST \n5/15/2019",
            ylab="Percent Correct",
            col="light blue")
 arrows(x0=bp, y0=m-se, y1=m+se, code=3, angle=90)
-
-
 
