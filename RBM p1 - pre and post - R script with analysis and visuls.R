@@ -1,7 +1,7 @@
 --------------------------------------------------------------------------------
   # This script achieves the following:
   ## Scores pre- and post-test answers
-  ## Calculates number correct and percent correct for each particpant
+  ## Calculates number correct and percent correct for each participant
   ## Joins and exports pre- and post-test data (inner join and full outer join)
   ## Compares pre- and post-test data using a paired samples t-test
   ## Creates visuals depicting pre- and post-test knowledge measures
