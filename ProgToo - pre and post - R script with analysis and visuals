@@ -209,9 +209,9 @@ KG.post$correctQ4 <- as.numeric(correctQ4)
 head(KG.post)
 
 ### Create a new column with total correct (number correct, percent correct in decimal, percent correct whole number)
-KG.post$post.ncorrect<-KG.post[,20]+KG.post[,21]+KG.post[,22]+KG.post[,23]
-KG.post$post.percorrect<-KG.post[,24]/4
-KG.post$post.percorrect.formated<-KG.post[,24]/4*100
+KG.post$post.ncorrect<-KG.post[,22]+KG.post[,23]+KG.post[,24]+KG.post[,25]
+KG.post$post.percorrect<-KG.post[,26]/4
+KG.post$post.percorrect.formated<-KG.post[,26]/4*100
 
 View(KG.post)
 
