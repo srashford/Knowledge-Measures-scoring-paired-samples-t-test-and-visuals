@@ -277,6 +277,11 @@ abline(a=0, b=1)
 ## Inner join data - paired samples t-test
 
 t.test(post.percorrect, pre.percorrect, mu=0, paired=T)
+nrow(KG.innerjoin.prepost)
+mean(pre.percorrect.formated)
+sd(pre.percorrect.formated)
+mean(post.percorrect.formated)
+sd(post.percorrect.formated)
 
 ## Graph results
 
