@@ -319,14 +319,16 @@ boxplot(post.percorrect, pre.percorrect)
 plot(post.percorrect, pre.percorrect)
 abline(a=0, b=1)
 
-## Inner join data - paired samples t-test
+## Inner join data - paired samples t-test + N, Mean, SE
 
 t.test(post.percorrect, pre.percorrect, mu=0, paired=T)
 nrow(KG.innerjoin.prepost)
 mean(pre.percorrect.formated)
-sd(pre.percorrect.formated)
+se <- sd(pre.percorrect.formated)/sqrt(length(pre.percorrect.formated))
+se
 mean(post.percorrect.formated)
-sd(post.percorrect.formated)
+se <- sd(post.percorrect.formated)/sqrt(length(post.percorrect.formated))
+se
 
 ## Graph results
 
